@@ -1,0 +1,10 @@
+coverage
+freezegun
+ipdb
+mock
+parameterized
+pylama
+pytest
+pytest-cov
+pyflakes==2.4.0
+pytz
