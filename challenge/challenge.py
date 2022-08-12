@@ -1,5 +1,6 @@
+import time
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Union, List
 
 
@@ -23,6 +24,11 @@ class HourlyTask:
     @property
     def next_to_do(self) -> Union[datetime, None]:
         """Return the next datetime that needs doing."""
+        raise NotImplementedError("Fill me in!")
+
+    def schedule(self, when: datetime) -> None:
+        """Schedule this task at the 'when' time, update local time markers."""
+        raise NotImplementedError("Fill me in!")
 
 
 class Scheduler:
@@ -42,10 +48,44 @@ class Scheduler:
 
     def get_tasks_to_do(self) -> List[HourlyTask]:
         """Get the list of tasks that need doing."""
+        return []
 
-    def schedule_tasks(self, task_list: List[HourlyTask]) -> None:
-        """Schedule the tasks in the list.
+    def schedule_tasks(self) -> None:
+        """Schedule the tasks.
 
         Tasks should be prioritised so that tasks with a recent "to do" date
         are done before any that need backfilling.
         """
+        tasks = self.get_tasks_to_do()
+        now = datetime.utcnow()
+        now_hour_start = now.replace(hour=0, minute=0, second=0, microsecond=0)
+        last_hour_start = now_hour_start - timedelta(hours=1)
+        [task.schedule(last_hour_start) for task in tasks]
+
+
+@dataclass
+class Controller:
+    """Use a Scheduler to repeatedly check and schedule tasks."""
+
+    #: The scheduler that we are controlling
+    scheduler: Scheduler
+
+    #: How long to wait between each schedule check
+    throttle_wait: timedelta
+
+    #: Daemon mode?
+    run_forever: bool = True
+
+    #: Run this many times (if not in Daemon mode)
+    run_iterations: int = 0
+
+    def run(self):
+        """Run scheduler"""
+        while self.run_iterations or self.run_forever:
+            before = datetime.utcnow()
+            self.scheduler.schedule_tasks()
+            self.run_iterations -= 1
+            after = datetime.utcnow()
+            elapsed = after - before
+            wait = self.throttle_wait.total_seconds() - elapsed.total_seconds()
+            time.sleep(max([0, wait]))

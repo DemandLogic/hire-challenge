@@ -1,9 +1,9 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 from unittest import TestCase
 
 from freezegun import freeze_time
 
-from challenge.challenge import HourlyTask, Scheduler
+from challenge.challenge import HourlyTask, Scheduler, Controller
 
 
 class TestHourlyTask(TestCase):
@@ -42,3 +42,27 @@ class TestScheduler(TestCase):
 
     def test_can_find_todos_with_most_recent_first(self):
         """Check found tasks are in order of most recent -> most historic."""
+
+
+class TestController(TestCase):
+    """Test the scheduler controller."""
+
+    def test_can_run_scheduler_once(self):
+        """Check can run a scheduler once."""
+        sch = Scheduler()
+        ctrl = Controller(
+            scheduler=sch,
+            throttle_wait=timedelta(seconds=1),
+            run_forever=False,
+            run_iterations=1
+        )
+        with freeze_time(datetime(2022, 8, 1, 8, 15)):
+            yesterday = datetime(2022, 7, 31)
+            task_with_todo = HourlyTask(start_from=yesterday)
+            sch.register_task(task_with_todo)
+            ctrl.run()
+            self.assertEqual(
+                task_with_todo.earliest_done,
+                datetime(2022, 8, 1, 7)
+            )
+
