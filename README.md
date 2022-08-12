@@ -70,10 +70,11 @@ tests in, but if you can't get `docker` working then you might want to just use
 a `virtualenv`
 
 - Check out the code
-- Either:
-  - Run `docker build ...` to build a container to run the code
-  - Then run `docker run .. pytest` to run the tests automatically
-  - You could also get a shell on the container and run tests manually like so `docker run .. bash`
+- Using Docker:
+  - Run `docker build -t dl/hire-challenge .` to build a container which included the environemnt and the code
+  - Then run `docker run -it dl/hire-challenge` to run the tests
+  - You could also get a shell on the container and run tests manually like so `docker run -it dl/hire-challenge bash` and then run `pytest`
+  - And if you don't want to rebuild the container each time you tweak a test, you can use `docker run -it -v $(pwd):/opt/hire-challenge dl/hire-challenge test` to mount the current directory into the container
 - Or:
   - Create a `virtualenv`
   - Use `pip install -r requirements.txt` to populate your environment
