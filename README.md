@@ -72,7 +72,7 @@ You'll be using `GitHub` and `git` to get started, then either `Docker` or `virt
 
 - If you don't already have one, get a free account with [GitHub](https://github.com/). In the following instructions we assume your user name is `YOUR_USER_NAME`.
 - At the top of the [DemandLogic/hire-challenge](https://github.com/DemandLogic/hire-challenge/) repo - click the "[Use this template](https://github.com/DemandLogic/hire-challenge/generate)" button (<-- or just click this link!)
-- After clicking you'll get a form where you can choose a name for your copy of the repo. We recommend using one generated from [here](https://www.thisworddoesnotexist.com/)). Below, we'll refer to it as `UNIQUE_REPO_NAME`.
+- After clicking you'll get a form where you can choose a name for your copy of the repo. We recommend using one generated from [here](https://www.thisworddoesnotexist.com/). Below, we'll refer to it as `UNIQUE_REPO_NAME`.
 - Don't change any of the other options.
 - Press the "Create repository from template" button
 - On your computer check out the code (e.g. `git clone git@github.com:YOUR_USER_NAME/UNIQUE_REPO_NAME`, or use the GitHub app, etc.)
