@@ -9,11 +9,11 @@ We're not looking for a perfect solution or even a complete solution; we just
 need something that you've worked on to discuss, that we also understand! So:
 
 - We don't expect you to spend more than 1.5 hours on it including reading time (unless you want to!)
-- If you *do* spend more than 1.5 hour on it - please log how long you spend
-- Please **fork this repository** to your own GitHub account
+- If you *do* spend more than 1.5 hours on it - please log how long you spend
+- Please **fork this repository** to your own [GitHub](https://github.com/) account
 - If you don't feel you have enough time to write any code, just record some thoughts about the challenge in code comments or pseudo-code, for example.
 - Please try to make **regular, atomic commits** to a **branch** (even if they are WIP (Work In Progress) commits).
-- Make a **Pull Request**, which we will use to review your changes.
+- Make a **[Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)**, which we will use to review your changes.
 - We'll talk over what you did in the interview
 - We may go into a pairing exercise on this code in the interview
 
@@ -74,7 +74,7 @@ a `virtualenv`
   - Run `docker build -t dl/hire-challenge .` to build a container which included the environemnt and the code
   - Then run `docker run -it dl/hire-challenge` to run the tests
   - You could also get a shell on the container and run tests manually like so `docker run -it dl/hire-challenge bash` and then run `pytest`
-  - And if you don't want to rebuild the container each time you tweak a test, you can use `docker run -it -v $(pwd):/opt/hire-challenge dl/hire-challenge test` to mount the current directory into the container
+  - And if you don't want to rebuild the container each time you tweak a test, you can use `docker run -it -v $(pwd):/opt/hire-challenge dl/hire-challenge pytest` to mount the current directory into the container (or `docker run -it -v $(pwd):/opt/hire-challenge dl/hire-challenge bash` for a shell with same mount set up)
 - Or:
   - Create a `virtualenv`
   - Use `pip install -r requirements.txt` to populate your environment
