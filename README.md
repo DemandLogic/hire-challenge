@@ -75,7 +75,7 @@ You'll be using `GitHub` and `git` to get started, then either `Docker` or `virt
 - After clicking you'll get a form where you can choose a name for your copy of the repo. We recommend using one generated from [here](https://www.thisworddoesnotexist.com/)). Below, we'll refer to it as `UNIQUE_REPO_NAME`.
 - Don't change any of the other options.
 - Press the "Create repository from template" button
-- On your computer check out the code (e.g. `git clone git@github:YOUR_USER_NAME/UNIQUE_REPO_NAME`, or use the GitHub app, etc.)
+- On your computer check out the code (e.g. `git clone git@github.com:YOUR_USER_NAME/UNIQUE_REPO_NAME`, or use the GitHub app, etc.)
 - Change this `README.md` file to be empty except for the name of your repo (e.g. `# UNIQUE_REPO_NAME`)
 - Commit your change: `git add README.md && git commit -m "Empty readme file."`
 - Push your change to GitHub `git push origin`
