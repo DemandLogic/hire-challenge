@@ -13,8 +13,7 @@ need something that you've worked on to discuss, that we also understand! So:
 - Please **do not fork this repository** to your own account - it will be visible to other applicants! Use the "**Use this template**" button at the top (and see "How to get started" below, for further recommendations)
 - If you don't feel you have enough time to write any code, just record some thoughts about the challenge in code comments or pseudo-code, for example.
 - Please try to make **regular, atomic commits** to a **branch** (even if they are WIP (Work In Progress) commits).
-- We'll talk over what you did in the interview
-- We may go into a pairing exercise on this code in the interview
+- If we go to interview, we'll talk over what you did, and may go into a pairing exercise on it
 
 ### Purpose of Tasks and Scheduler
 
