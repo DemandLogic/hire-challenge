@@ -9,7 +9,7 @@ We're not looking for a perfect solution or even a complete solution; we just
 need something that you've worked on to discuss, that we also understand! So:
 
 - We don't expect you to spend more than 1.5 hours on it including reading time (unless you want to!)
-- If you *do* spend more than 1.5 hours on it - please log how long you spend
+- If you *do* spend more than 1.5 hours on it - please log how long you spend, and tell us how long you spent when you submit
 - Please **do not fork this repository** to your own account - it will be visible to other applicants! Use the "**Use this template**" button at the top (and see "How to get started" below, for further recommendations)
 - If you don't feel you have enough time to write any code, just record some thoughts about the challenge in code comments or pseudo-code, for example.
 - Please try to make **regular, atomic commits** to a **branch** (even if they are WIP (Work In Progress) commits).
